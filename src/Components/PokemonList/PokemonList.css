@@ -1,0 +1,41 @@
+.pokemon {
+	position: relative;
+	padding: 30px 20px;
+}
+
+.poke-nav {
+	position: absolute;
+	display: inline-block;
+	width: 100px;
+}
+
+.prev {
+	left: 0;
+}
+
+.next {
+	right: 0;
+}
+
+.flex-container {
+	margin-top: 40px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+}
+
+.pokemon-element {
+	margin:10px 0px; 
+	width: 300px;
+	padding: 20px 0px;
+	display: inline-block;
+	background-color: #333;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.pokemon-element:hover {
+	cursor: pointer;
+}

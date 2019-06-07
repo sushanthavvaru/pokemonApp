@@ -13,10 +13,10 @@ class Header extends Component {
 						<Link to={'/'} >Home</Link>
 					</div>
 					<div className="menu-item">
-						<Link to={'/explore'} >Explore Pokemon</Link>
+						<Link to={'/exploreSearch'} >Explore Pokemon</Link>
 					</div>
 				</div>
-
+				
 				{this.props.children}
 				
 			</div>

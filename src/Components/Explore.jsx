@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 
-class Explore extends Component {
+class Details extends Component {
 
 	render() {
-		return Explore
+		console.log(this.props)
+		return 'home'
 	}
 }
 
-export default Explore
+export default Details
