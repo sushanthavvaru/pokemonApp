@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {GET_POKEMON, GET_POKEMON_ERROR} from './../Helpers'
+import {GET_POKEMON, GET_POKEMON_ERROR, GET_POKE_LOC, POK_DETAIL, CLEAR_DETAIL} from './../Helpers'
 
 export const fetchPokemons = (offset,limit) => (dispatch, getState) => {
 
@@ -24,3 +24,33 @@ export const fetchPokemons = (offset,limit) => (dispatch, getState) => {
 			})
 		}
 }
+
+export const getLoc = (id) => (dispatch) => {
+
+	
+	axios.get(`http://localhost:4000/getLoc/${id}` ,{ headers: 
+																	{
+																	 'Access-Control-Allow-Origin': '*'}}).then((response) => {
+		console.log(response)
+		dispatch({
+			type:GET_POKE_LOC, 
+			payload: response.data.locations
+		})
+	})
+ }
+
+export const getPokeDetails = (url) => (dispatch) => {
+	axios.get(url).then(response => {
+		dispatch({
+			type: POK_DETAIL,
+			payload: response.data
+		})
+	})
+}
+
+export const clearValue = () => dispatch => {
+	dispatch({
+		type: CLEAR_DETAIL
+	})
+}
+

@@ -38,7 +38,8 @@ class PokeminList extends Component {
 			const listRender = list.map((pokemon)=> {
 				return <div key = {pokemon.url.slice(-3, -1)}
 							className='pokemon-element'
-							onClick={()=> {this.props.history.push(`/details/${pokemon.url.slice(-3, -1)}`)}}>{pokemon.name}</div>
+							onClick={()=> {this.props.history.push({pathname:`/details/${pokemon.name}`, state: {url: pokemon.url}})}}
+							>{pokemon.name}</div>
 			})
 
 			return listRender
